@@ -2,7 +2,9 @@ $(document).ready(function() {
     
     $(document).on('click', '#search__submit', function() {
         
-        var query = $('#search__query').val();
+        var query = $('#search__query').val().toLowerCase();
+        
+       
         
         if(lookup__OS('windows', query))
         {
