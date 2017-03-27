@@ -1,8 +1,5 @@
 <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-    
     include('../resources/utilities/conn.php');
     
     //Create MySQL Object
@@ -81,6 +78,7 @@
         <!-- Style Sheets -->
         
         <link rel="stylesheet" type="text/css" href="../resources/stylesheets/main.css">
+        <link rel="stylesheet" type="text/css" href="../resources/stylesheets/search.css">
 
         <!-- Scripts -->
         
@@ -91,46 +89,114 @@
     
     <body>
         
-        <?php
-        
-            if ($error__result->num_rows > 0)
-            {
-                echo '<table class="table table__striped table__main">';
-                    echo '<thead>';
-                        echo '<tr>';
-                            echo '<th>Fejl</th>';
-                            echo '<th>Fejlbesked</th>';
-                            echo '<th>Beskrivelse</th>';
-                            echo '<th>Kategori</th>';
-                            echo '<th>Operativsystem</th>';
-                        echo '</tr>';
-                    echo '</thead>';
-                    echo '<tbody>';
-                    
-                    while ($row = $error__result->fetch_assoc())
-                    {
-                        echo '<tr class="error__link" data-errorid="'.$row['error__id'].'">';
-                            echo '<td>'.$row['error__title'].'</td>';
-                            echo '<td>'.$row['error__message'].'</td>';
-                            echo '<td>'.$row['error__description'].'</td>';
-                            echo '<td>'.$row['error__category'].'</td>';
-                            echo '<td>'.$row['error__OS'].'</td>';
-                        echo '</tr>';
-                    }
-                    
-                    echo '</tbody>';
-                echo '</table>';
+        <div class='page__container'>
+            
+            <?php include '../resources/includes/header.php'; ?>
+            
+            <div class='page__content'>
                 
-                $error__result->free_result();
-                
-                $error__query->close();
+                <div class='page__inwrap'>
+                    
+                    <div class='search__form'>
+                        
+                        <form id='search__bar' class='simple__form' action='./' method='post' accept-charset="UTF-8" novalidate="novalidate">
+                    
+                            <div class='search__bar'>
+
+                                <div class='bar__title'>IMKD</div>
+
+                                <div class='sbar'>
+
+                                    <div class='sibar'>
+
+                                        <div class='sicbar'>
+
+                                            <div class='sicbbar'>
+                                                
+                                                <button id='search__submit' value='Søg' type='submit'>
+                                                    
+                                                    <i class="fa fa-search search__icon" aria-hidden="true"></i>
+                                                    
+                                                </button>
+
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!--
+                                <form id="search__bar" class="simple__form" action="./" method="post" accept-charset="UTF-8" novalidate='novalidate'>
+
+                                    <div class='form__inputs'>
+
+                                        <div class='form__item search'>
+
+                                            <input type='text' id='search__query' name='search__query' class='form__control dark search' autofocus='autofocus' required autocomplete="off" value=''/>
+
+                                        </div>
+
+                                    </div>
+
+                                </form> -->
+
+                            </div>
                             
-            }
-            else
-            {
-                echo 'Dixxxx';
-            }
+                        </form>
+                        
+                    </div>
+                    
+                    <?php
         
-        ?>
+                        if ($error__result->num_rows > 0)
+                        {
+                            echo '<table class="table table__striped table__main">';
+                                echo '<thead>';
+                                    echo '<tr>';
+                                        echo '<th>Fejl</th>';
+                                        echo '<th>Fejlbesked</th>';
+                                        echo '<th>Beskrivelse</th>';
+                                        echo '<th>Kategori</th>';
+                                        echo '<th>Operativsystem</th>';
+                                    echo '</tr>';
+                                echo '</thead>';
+                                echo '<tbody>';
+
+                                while ($row = $error__result->fetch_assoc())
+                                {
+                                    echo '<tr class="error__link" data-errorid="'.$row['error__id'].'">';
+                                        echo '<td>'.$row['error__title'].'</td>';
+                                        echo '<td>'.$row['error__message'].'</td>';
+                                        echo '<td>'.$row['error__description'].'</td>';
+                                        echo '<td>'.$row['error__category'].'</td>';
+                                        echo '<td>'.$row['error__OS'].'</td>';
+                                    echo '</tr>';
+                                }
+
+                                echo '</tbody>';
+                            echo '</table>';
+
+                            $error__result->free_result();
+
+                            $error__query->close();
+
+                        }
+                        else
+                        {
+                            echo 'Dixxxx';
+                        }
+
+                    ?>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        
         
     </body>
