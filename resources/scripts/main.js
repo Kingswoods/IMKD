@@ -4,9 +4,11 @@ $(document).ready(function() {
         
         var query = $('#search__query').val().toLowerCase();
         
-       
-        
-        if(lookup__OS('windows', query))
+        if (query == "")
+        {
+            window.location.href = '../search?query=all';
+        }
+        else if(lookup__OS('windows', query))
         {
             window.location.href = '../search?query=' + query + '&OS=windows';
         }

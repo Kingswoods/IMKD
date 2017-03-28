@@ -91,34 +91,54 @@
         
         <div class='page__container'>
             
-            <?php include '../resources/includes/header.php'; ?>
-            
             <div class='page__content'>
                 
                 <div class='page__inwrap'>
                     
-                    <div class='search__form'>
-                        
-                        <form id='search__bar' class='simple__form' action='./' method='post' accept-charset="UTF-8" novalidate="novalidate">
+                    <div class='top__bar'>
                     
-                            <div class='search__bar'>
+                        <div class='search__form'>
 
-                                <div class='bar__title'>IMKD</div>
+                            <form id='search__bar' class='simple__form' action='./' method='post' accept-charset="UTF-8" novalidate="novalidate">
 
-                                <div class='sbar'>
+                                <div class='search__bar'>
 
-                                    <div class='sibar'>
+                                    <div class='bar__title'>IMKD</div>
 
-                                        <div class='sicbar'>
+                                    <div class='sbar'>
 
-                                            <div class='sicbbar'>
-                                                
-                                                <button id='search__submit' value='Søg' type='submit'>
-                                                    
-                                                    <i class="fa fa-search search__icon" aria-hidden="true"></i>
-                                                    
-                                                </button>
+                                        <div class='sibar'>
 
+                                            <div class='sicbar'>
+
+                                                <div class='sicbbar'>
+
+                                                    <button id='search__submit' value='Søg' type='submit'>
+
+                                                        <i class="fa fa-search search__icon" aria-hidden="true"></i>
+
+                                                    </button>
+
+                                                    <div class='sinputbar'>
+
+                                                        <div class='sinputcbar'>
+
+                                                            <div class='sinputcobar'>
+
+                                                                <div class='inco'>
+
+                                                                    <input id='search__query' class='form__control dark__alt' maxlength="2048" name='search__query' autocomplete="off" spellcheck="false" type='text'> 
+
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                </div>
 
                                             </div>
 
@@ -126,26 +146,91 @@
 
                                     </div>
 
-                                </div>
+                                    <!--
+                                    <form id="search__bar" class="simple__form" action="./" method="post" accept-charset="UTF-8" novalidate='novalidate'>
 
-                                <!--
-                                <form id="search__bar" class="simple__form" action="./" method="post" accept-charset="UTF-8" novalidate='novalidate'>
+                                        <div class='form__inputs'>
 
-                                    <div class='form__inputs'>
+                                            <div class='form__item search'>
 
-                                        <div class='form__item search'>
+                                                <input type='text' id='search__query' name='search__query' class='form__control dark search' autofocus='autofocus' required autocomplete="off" value=''/>
 
-                                            <input type='text' id='search__query' name='search__query' class='form__control dark search' autofocus='autofocus' required autocomplete="off" value=''/>
+                                            </div>
 
                                         </div>
 
+                                    </form> -->
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div class='top__nav'>
+                        
+                        <div id='topbc'>
+                            
+                            <div id='topbco'>
+                                
+                                <div id='topbic'>
+                                    
+                                    <div id='topbic__ic'>
+                                        
+                                        <div id='top__nfl'>
+                                            
+                                            <div>
+                                                
+                                                <div class='main__bar'>
+                                                    
+                                                    <?php
+                                                
+                                                        if ($OS == "")
+                                                        {
+                                                            echo '<div class="menu__item active" id="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                        }
+                                                        else if ($OS == "windows")
+                                                        {
+                                                            echo '<div class="menu__item" id="all">Alle</div>';
+                                                            echo '<div class="menu__item active" id="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                        }
+                                                        else if ($OS == "linux")
+                                                        {
+                                                            echo '<div class="menu__item" id="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows">Windows</div>';
+                                                            echo '<div class="menu__item active" id="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                        }
+                                                        else if ($OS == "OSX")
+                                                        {
+                                                            echo '<div class="menu__item" id="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux">Linux</div>';
+                                                            echo '<div class="menu__item active" id="osx">OS X</div>';
+                                                        }
+                                                
+                                                    ?>
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                        
                                     </div>
-
-                                </form> -->
-
+                                    
+                                </div>
+                                
                             </div>
                             
-                        </form>
+                        </div>
                         
                     </div>
                     
