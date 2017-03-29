@@ -18,11 +18,11 @@ $(document).ready(function() {
         }
         else if(lookup__OS('mac', query))
         {
-            window.location.href = '../search?query=' + query + '&OS=OSX';
+            window.location.href = '../search?query=' + query + '&OS=osx';
         }
         else if(lookup__OS('OSX', query))
         {
-            window.location.href = '../search?query=' + query + '&OS=OSX';
+            window.location.href = '../search?query=' + query + '&OS=osx';
         }
         else
         {

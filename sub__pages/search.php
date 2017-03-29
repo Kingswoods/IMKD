@@ -83,7 +83,7 @@
         <!-- Scripts -->
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src='resources/scripts/main.js'></script>
+        <script src='../resources/scripts/search.js'></script>
     
     </head>
     
@@ -189,36 +189,64 @@
                                                 
                                                         if ($OS == "")
                                                         {
-                                                            echo '<div class="menu__item active" id="all">Alle</div>';
-                                                            echo '<div class="menu__item" id="windows">Windows</div>';
-                                                            echo '<div class="menu__item" id="linux">Linux</div>';
-                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                            echo '<div class="menu__item active" id="all" data-identifier="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows" data-identifier="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux" data-identifier="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx" data-identifier="OSX">OS X</div>';
                                                         }
                                                         else if ($OS == "windows")
                                                         {
-                                                            echo '<div class="menu__item" id="all">Alle</div>';
-                                                            echo '<div class="menu__item active" id="windows">Windows</div>';
-                                                            echo '<div class="menu__item" id="linux">Linux</div>';
-                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                            echo '<div class="menu__item" id="all" data-identifier="all">Alle</div>';
+                                                            echo '<div class="menu__item active" id="windows" data-identifier="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux" data-identifier="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx" data-identifier="OSX">OS X</div>';
                                                         }
                                                         else if ($OS == "linux")
                                                         {
-                                                            echo '<div class="menu__item" id="all">Alle</div>';
-                                                            echo '<div class="menu__item" id="windows">Windows</div>';
-                                                            echo '<div class="menu__item active" id="linux">Linux</div>';
-                                                            echo '<div class="menu__item" id="osx">OS X</div>';
+                                                            echo '<div class="menu__item" id="all" data-identifier="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows" data-identifier="windows">Windows</div>';
+                                                            echo '<div class="menu__item active" id="linux" data-identifier="linux">Linux</div>';
+                                                            echo '<div class="menu__item" id="osx" data-identifier="OSX">OS X</div>';
                                                         }
                                                         else if ($OS == "OSX")
                                                         {
-                                                            echo '<div class="menu__item" id="all">Alle</div>';
-                                                            echo '<div class="menu__item" id="windows">Windows</div>';
-                                                            echo '<div class="menu__item" id="linux">Linux</div>';
-                                                            echo '<div class="menu__item active" id="osx">OS X</div>';
+                                                            echo '<div class="menu__item" id="all" data-identifier="all">Alle</div>';
+                                                            echo '<div class="menu__item" id="windows" data-identifier="windows">Windows</div>';
+                                                            echo '<div class="menu__item" id="linux" data-identifier="linux">Linux</div>';
+                                                            echo '<div class="menu__item active" id="osx" data-identifier="OS X">OSX</div>';
                                                         }
                                                 
                                                     ?>
                                                     
                                                 </div>
+                                                
+                                            </div>
+                                            
+                                            <div>
+                                                
+                                                <?php
+                                                
+                                                    if ($ware == "")
+                                                    {
+                                                        echo '<div class="sub__item active" id="sub__all" data-identifier="all">Alle</div>';
+                                                        echo '<div class="sub__item" id="sub__software" data-identifier="software">Software</div>';
+                                                        echo '<div class="sub__item" id="sub__hardware" data-identifier="hardware">Hardware</div>';
+                                                        
+                                                    }
+                                                    else if ($ware == "SW")
+                                                    {
+                                                        echo '<div class="sub__item" id="sub__all" data-identifier="all">Alle</div>';
+                                                        echo '<div class="sub__item active" id="sub__software" data-identifier="software">Software</div>';
+                                                        echo '<div class="sub__item" id="sub__hardware" data-identifier="hardware">Hardware</div>';
+                                                    }
+                                                    else if ($ware == "HW")
+                                                    {
+                                                        echo '<div class="sub__item" id="sub__all" data-identifier="all">Alle</div>';
+                                                        echo '<div class="sub__item" id="sub__software" data-identifier="software">Software</div>';
+                                                        echo '<div class="sub__item active" id="sub__hardware" data-identifier="hardware">Hardware</div>';
+                                                    }
+                                                
+                                                ?>
                                                 
                                             </div>
                                             
